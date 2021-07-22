@@ -34,3 +34,6 @@ success.classList.remove("hidden")
 errorClose.addEventListener("click", () => {
   error.classList.add("hidden")
 })
+
+guess.addEventListener("change", onSubmit)
+onSubmit()  // run once after the page is loaded to force the error pop-up for the initial value.
