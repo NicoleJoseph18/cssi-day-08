@@ -2,6 +2,9 @@ const onSubmit = () => {
     
     const passcodeInput = document.querySelector("#passcode").value;
     const messageInput = document.querySelector("#message").value;
+    const error = document.querySelector("#error")
+    const errorClose = document.querySelector("#error-close")
+    const errorText = document.querySelector("#error-text")
     try{
 
     
@@ -21,4 +24,9 @@ catch(errorMessage){
 errorText.innerHTML = errorMessage
 return
 }
+error.classList.add("hidden")
 }
+
+errorClose.addEventListener("click", () => {
+  error.classList.add("hidden")
+})
