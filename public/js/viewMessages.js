@@ -4,9 +4,9 @@ const getMessages = () =>{
     messagesRef.on('value',(snapshot) => {
         const data = snapshot.val()
         for( let key in data){
-            if(key === passcode.value){
+            if(data[key].passcode === passcode.value){
                 const message = document.querySelector("#message")
-                message.innerHTML = data[key]
+                message.innerHTML = data[key].message
             console.log("match found")
             }
         }
