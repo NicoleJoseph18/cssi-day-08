@@ -5,6 +5,7 @@ const onSubmit = () => {
     const error = document.querySelector("#error")
     const errorClose = document.querySelector("#error-close")
     const errorText = document.querySelector("#error-text")
+    const success = document.querySelector("#success")
     try{
 
     
@@ -21,10 +22,13 @@ const onSubmit = () => {
     firebase.database().ref().push(payload)
 }
 catch(errorMessage){
-errorText.innerHTML = errorMessage
-return
+ errorText.innerHTML = errorMessage
+    success.classList.add("hidden")
+    error.classList.remove("hidden")
+    return
 }
 error.classList.add("hidden")
+success.classList.remove("hidden")
 }
 
 errorClose.addEventListener("click", () => {
